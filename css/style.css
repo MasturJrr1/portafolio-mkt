@@ -1,0 +1,278 @@
+/* ==========================================================================
+   1. VARIABLES DE DISEÑO Y RESET GENERAL
+   ========================================================================== */
+:root {
+    /* Paleta de colores basada en la referencia */
+    --color-bg: #eff2f9;
+    --color-card-bg: #ffffff;
+    --color-text-primary: #071e31;
+    --color-text-secondary: #586a82;
+    --color-text-bio: #4a5b70;
+    --color-accent: #4f46e5;
+    --color-separator: #c5d0fb;
+    --color-btn-border: #b8c7fd;
+    --color-btn-hover-bg: #f8faff;
+    --color-btn-hover-border: #6366f1;
+    
+    /* Tipografía */
+    --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
+    /* Sombras y transiciones */
+    --card-shadow: 0 16px 40px rgba(15, 23, 42, 0.05), 0 2px 6px rgba(15, 23, 42, 0.02);
+    --btn-shadow-hover: 0 4px 14px rgba(79, 70, 229, 0.12);
+    --transition-standard: all 0.22s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    
+    /* Centrado con Flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   2. CONTENEDOR DE LA TARJETA (CARD)
+   ========================================================================== */
+.card {
+    background-color: var(--color-card-bg);
+    width: 100%;
+    max-width: 530px;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    padding: 36px 48px 52px 48px;
+    text-align: center;
+    position: relative;
+}
+
+/* ==========================================================================
+   3. MENÚ DE NAVEGACIÓN SUPERIOR
+   ========================================================================== */
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 22px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-size: 0.86rem;
+    font-weight: 600;
+    padding-bottom: 5px;
+    position: relative;
+    transition: var(--transition-standard);
+}
+
+.nav-link:hover {
+    color: var(--color-accent);
+}
+
+/* Indicador activo bajo "Inicio" */
+.nav-link.active {
+    color: var(--color-text-primary);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 3px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   4. AVATAR CIRCULAR
+   ========================================================================== */
+.avatar-container {
+    width: 148px;
+    height: 148px;
+    margin: 0 auto 22px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+}
+
+/* ==========================================================================
+   5. JERARQUÍA DE TEXTOS Y CABECERA
+   ========================================================================== */
+.profile-header {
+    margin-bottom: 18px;
+}
+
+.profile-name {
+    font-size: 1.82rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    letter-spacing: -0.015em;
+    margin-bottom: 6px;
+}
+
+.profile-subtitle {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+/* Línea separadora */
+.separator {
+    border: none;
+    width: 38px;
+    height: 3px;
+    background-color: var(--color-separator);
+    border-radius: 2px;
+    margin: 0 auto 22px auto;
+}
+
+/* Sección de biografía */
+.bio-section {
+    margin-bottom: 28px;
+}
+
+.bio-text {
+    font-size: 0.87rem;
+    line-height: 1.6;
+    color: var(--color-text-bio);
+    font-weight: 400;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   6. BOTONES DE ENLACES SOCIALES
+   ========================================================================== */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 11px;
+}
+
+.btn-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 42px;
+    border: 1.5px solid var(--color-btn-border);
+    border-radius: 10px;
+    background-color: var(--color-card-bg);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-size: 0.86rem;
+    font-weight: 600;
+    gap: 10px;
+    transition: var(--transition-standard);
+    cursor: pointer;
+}
+
+.btn-icon {
+    color: var(--color-accent);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estados interactivos (hover, active, focus) */
+.btn-social:hover {
+    border-color: var(--color-btn-hover-border);
+    background-color: var(--color-btn-hover-bg);
+    transform: translateY(-2px);
+    box-shadow: var(--btn-shadow-hover);
+}
+
+.btn-social:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.btn-social:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   7. RESPONSIVIDAD (DISPOSITIVOS MÓVILES)
+   ========================================================================== */
+@media (max-width: 540px) {
+    body {
+        padding: 16px;
+    }
+
+    .card {
+        padding: 28px 20px 40px 20px;
+        border-radius: 16px;
+    }
+
+    .nav {
+        margin-bottom: 16px;
+    }
+
+    .nav-list {
+        gap: 16px;
+    }
+
+    .avatar-container {
+        width: 124px;
+        height: 124px;
+        margin-bottom: 18px;
+    }
+
+    .profile-name {
+        font-size: 1.55rem;
+    }
+
+    .profile-subtitle {
+        font-size: 0.88rem;
+    }
+
+    .bio-text {
+        font-size: 0.82rem;
+        line-height: 1.55;
+    }
+
+    .btn-social {
+        width: 100%;
+        max-width: 220px;
+    }
+}
