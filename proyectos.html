@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Proyectos y colecciones de gorras New Era personalizadas - Portafolio y Pyme de Naxito pop.">
-    <title>Proyectos - Naxito pop Portafolio</title>
+        content="Proyectos y colecciones de gorras New Era personalizadas - Portafolio y Pyme de Ignacio Galindo.">
+    <title>Proyectos - Ignacio Galindo Portafolio</title>
 
     <!-- Google Fonts: Outfit (300, 400, 500, 600, 700) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Animaciones AOS Library (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 
     <!-- Hoja de estilos principal compartida (Consistencia visual según guia_formativa_02.md) -->
     <link rel="stylesheet" href="css/style.css">
@@ -20,8 +23,7 @@
 <body>
 
     <!-- CONTENEDOR PRINCIPAL DE PROYECTOS -->
-    <!-- Solucionado con guia_formativa_02.md: Contenedor centralizado con la misma coherencia de diseño -->
-    <main class="card card-wide" id="proyectos-page">
+    <main class="card card-wide" id="proyectos-page" data-aos="fade-up" data-aos-duration="750">
 
         <!-- Menú de Navegación Común -->
         <nav class="nav" aria-label="Navegación principal">
@@ -39,17 +41,17 @@
         </nav>
 
         <!-- Encabezado de la Sección -->
-        <header class="page-header">
+        <header class="page-header" data-aos="fade-down" data-aos-delay="100">
             <h1 class="page-title">Proyectos</h1>
             <div class="header-accent" aria-hidden="true"></div>
             <p class="page-subtitle">Colecciones destacadas y lanzamientos de mi pyme de gorras New Era personalizadas.</p>
         </header>
 
-        <!-- Lista de 3 Proyectos Destacados (Según requerimientos de Formativa 02) -->
+        <!-- Lista de 3 Proyectos Destacados -->
         <section class="projects-list" aria-label="Catálogo de proyectos destacados">
 
             <!-- Proyecto 1 -->
-            <article class="project-card">
+            <article class="project-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="project-info">
                     <span class="project-tag">Edición Especial</span>
                     <h2 class="project-title">New Era 59FIFTY Yankees — Sand Edition Querubín</h2>
@@ -61,14 +63,14 @@
                         Ver en Instagram &rarr;
                     </a>
                 </div>
-                <div class="project-img-wrapper">
+                <div class="project-img-wrapper" data-aos="zoom-in" data-aos-delay="300">
                     <img src="img/proyecto1.jpg" alt="Gorra New Era Yankees en tono beige arena con bordado de querubín"
                         class="project-img" loading="lazy">
                 </div>
             </article>
 
             <!-- Proyecto 2 -->
-            <article class="project-card">
+            <article class="project-card" data-aos="fade-up" data-aos-delay="250">
                 <div class="project-info">
                     <span class="project-tag">Streetwear</span>
                     <h2 class="project-title">New Era 59FIFTY Yankees — Midnight Black</h2>
@@ -80,14 +82,14 @@
                         Consultar por WhatsApp &rarr;
                     </a>
                 </div>
-                <div class="project-img-wrapper">
+                <div class="project-img-wrapper" data-aos="zoom-in" data-aos-delay="350">
                     <img src="img/proyecto2.jpg" alt="Gorra New Era Yankees Midnight Black con querubín bordado"
                         class="project-img" loading="lazy">
                 </div>
             </article>
 
             <!-- Proyecto 3 -->
-            <article class="project-card">
+            <article class="project-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="project-info">
                     <span class="project-tag">Edición Limitada</span>
                     <h2 class="project-title">New Era 59FIFTY Yankees — Sky Blue Edition</h2>
@@ -99,7 +101,7 @@
                         Ver en Instagram &rarr;
                     </a>
                 </div>
-                <div class="project-img-wrapper">
+                <div class="project-img-wrapper" data-aos="zoom-in" data-aos-delay="400">
                     <img src="img/proyecto3.jpg" alt="Gorra New Era Yankees Sky Blue con bordado especial"
                         class="project-img" loading="lazy">
                 </div>
@@ -108,6 +110,17 @@
         </section>
 
     </main>
+
+    <!-- Scripts de Animación AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 40
+        });
+    </script>
 
 </body>
 

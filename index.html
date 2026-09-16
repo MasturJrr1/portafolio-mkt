@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Portafolio personal de Naxito pop - Emprendedor, diseñador streetwear y creador de tienda de gorras New Era personalizadas.">
-    <title>naxitopop - Portafolio Personal</title>
+        content="Portafolio personal de Ignacio Galindo - Emprendedor, diseñador streetwear y creador de tienda de gorras New Era personalizadas.">
+    <title>Ignacio Galindo - Portafolio Personal</title>
 
     <!-- Google Fonts: Outfit (300, 400, 500, 600, 700) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Animaciones AOS Library (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 
     <!-- Hoja de estilos principal compartida -->
     <link rel="stylesheet" href="css/style.css">
@@ -20,7 +23,7 @@
 <body>
 
     <!-- TARJETA DE PRESENTACIÓN PRINCIPAL -->
-    <main class="card" id="profile-card">
+    <main class="card" id="profile-card" data-aos="fade-up" data-aos-duration="750">
 
         <!-- Menú de Navegación Superior Común -->
         <nav class="nav" aria-label="Navegación principal">
@@ -38,23 +41,23 @@
         </nav>
 
         <!-- Contenedor del Avatar Circular -->
-        <div class="avatar-container">
-            <img src="img/avatar.jpg" alt="Fotografía de perfil de Naxito pop" class="avatar">
+        <div class="avatar-container" data-aos="zoom-in" data-aos-delay="150" data-aos-duration="600">
+            <img src="img/avatar.jpg" alt="Fotografía de perfil de Ignacio Galindo" class="avatar">
         </div>
 
         <!-- Encabezado de Perfil: Nombre y Especialidad -->
-        <header class="profile-header">
-            <h1 class="profile-name">Naxito pop</h1>
+        <header class="profile-header" data-aos="fade-up" data-aos-delay="250">
+            <h1 class="profile-name">Ignacio Galindo</h1>
             <p class="profile-subtitle">Emprendedor & Custom New Era Caps</p>
         </header>
 
         <!-- Línea Decorativa Divisoria -->
-        <hr class="separator">
+        <hr class="separator" data-aos="fade-in" data-aos-delay="350">
 
         <!-- Párrafo de Biografía Personal -->
-        <section class="bio-section">
+        <section class="bio-section" data-aos="fade-up" data-aos-delay="400">
             <p class="bio-text">
-                Me apasiona el arte, el diseño streetwear y la tecnología. Creador de una pyme dedicada a la personalización exclusiva de gorras New Era con bordados únicos y de alta calidad.
+                Creador de una pyme dedicada a la venta exclusiva de gorras New Era con bordados únicos y de alta calidad.
             </p>
         </section>
 
@@ -62,7 +65,8 @@
         <nav class="social-links" aria-label="Enlaces de redes sociales y contacto">
             <!-- Instagram -->
             <a href="https://www.instagram.com/nxxito_?stkn=MWg5dmMzbmprYzJvdA%3D%3D&utm_source=qr"
-                target="_blank" rel="noopener noreferrer" class="btn-social" id="btn-instagram">
+                target="_blank" rel="noopener noreferrer" class="btn-social" id="btn-instagram"
+                data-aos="fade-up" data-aos-delay="480">
                 <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -74,7 +78,7 @@
 
             <!-- WhatsApp -->
             <a href="https://wa.me/56978710840" target="_blank" rel="noopener noreferrer" class="btn-social"
-                id="btn-whatsapp">
+                id="btn-whatsapp" data-aos="fade-up" data-aos-delay="560">
                 <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path
                         d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.24-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.44 1.03 2.61c.13.17 1.77 2.71 4.29 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.11-.23-.17-.48-.29z" />
@@ -83,7 +87,8 @@
             </a>
 
             <!-- Correo Electrónico -->
-            <a href="mailto:nachogalindo.puntok@gmail.com" class="btn-social" id="btn-email">
+            <a href="mailto:nachogalindo.puntok@gmail.com" class="btn-social" id="btn-email"
+                data-aos="fade-up" data-aos-delay="640">
                 <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -94,6 +99,17 @@
         </nav>
 
     </main>
+
+    <!-- Scripts de Animación AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 40
+        });
+    </script>
 
 </body>
 

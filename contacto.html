@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Contacto de Naxito pop - Tienda y pyme de gorras New Era personalizadas. Escríbenos por formulario, WhatsApp o Instagram.">
-    <title>Contacto - Naxito pop Portafolio</title>
+        content="Contacto de Ignacio Galindo - Tienda y pyme de gorras New Era personalizadas. Escríbenos por formulario, WhatsApp o Instagram.">
+    <title>Contacto - Ignacio Galindo Portafolio</title>
 
     <!-- Google Fonts: Outfit (300, 400, 500, 600, 700) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Animaciones AOS Library (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 
     <!-- Hoja de estilos principal compartida (Consistencia visual) -->
     <link rel="stylesheet" href="css/style.css">
@@ -20,8 +23,7 @@
 <body>
 
     <!-- CONTENEDOR PRINCIPAL DE CONTACTO -->
-    <!-- Solucionado con guia_formativa_02.md: Formulario accesible con labels, inputs requeridos y validación -->
-    <main class="card card-wide" id="contacto-page">
+    <main class="card card-wide" id="contacto-page" data-aos="fade-up" data-aos-duration="750">
 
         <!-- Menú de Navegación Común -->
         <nav class="nav" aria-label="Navegación principal">
@@ -39,7 +41,7 @@
         </nav>
 
         <!-- Encabezado de la Sección -->
-        <header class="page-header">
+        <header class="page-header" data-aos="fade-down" data-aos-delay="100">
             <h1 class="page-title">Contacto</h1>
             <div class="header-accent" aria-hidden="true"></div>
             <p class="page-subtitle">¿Tienes alguna duda sobre nuestras gorras o quieres encargar tu modelo personalizado? ¡Escríbeme!</p>
@@ -49,7 +51,7 @@
         <div class="contact-grid">
 
             <!-- Formulario de Contacto Accesible -->
-            <form action="#" method="POST" class="contact-form" id="form-contacto">
+            <form action="#" method="POST" class="contact-form" id="form-contacto" data-aos="fade-right" data-aos-delay="200">
                 <div class="form-group">
                     <label for="username">Nombre Completo:</label>
                     <input type="text" id="username" name="username" placeholder="Ej. Ignacio Galindo" required>
@@ -75,7 +77,7 @@
             </form>
 
             <!-- Panel de Canales Directos de la Pyme -->
-            <aside class="contact-side-panel" aria-label="Canales de contacto directo">
+            <aside class="contact-side-panel" aria-label="Canales de contacto directo" data-aos="fade-left" data-aos-delay="300">
                 <div class="direct-contact-card">
                     <h2 class="direct-contact-title">Canales Directos</h2>
                     <p class="project-desc" style="margin-bottom: 14px;">
@@ -125,6 +127,17 @@
         </div>
 
     </main>
+
+    <!-- Scripts de Animación AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 40
+        });
+    </script>
 
 </body>
 
