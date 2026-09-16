@@ -1,25 +1,32 @@
 /* ==========================================================================
    1. VARIABLES DE DISEÑO Y RESET GENERAL
-   ========================================================================== */
+   ==========================================================================
+   /* Aplicado según guia_diseno.md: Regla de color 60-30-10
+      - 60% Fondo neutro cálido (Beige)
+      - 30% Texto estructural legible (Moca / Café oscuro para alto contraste)
+      - 10% Acentos y botones interactivos (Rosa pastel / Dusty rose) */
 :root {
-    /* Paleta de colores basada en la referencia */
-    --color-bg: #eff2f9;
-    --color-card-bg: #ffffff;
-    --color-text-primary: #071e31;
-    --color-text-secondary: #586a82;
-    --color-text-bio: #4a5b70;
-    --color-accent: #4f46e5;
-    --color-separator: #c5d0fb;
-    --color-btn-border: #b8c7fd;
-    --color-btn-hover-bg: #f8faff;
-    --color-btn-hover-border: #6366f1;
+    /* Paleta de colores cálida: Rosa Pastel y Beige */
+    --color-bg: #f8f4ef;                /* Beige suave y acogedor para el 60% del fondo */
+    --color-card-bg: #ffffff;           /* Fondo blanco cálido de la tarjeta */
+    --color-text-primary: #2d2220;      /* Moca oscuro para títulos y máxima legibilidad */
+    --color-text-secondary: #745f5a;    /* Beige tostado para subtítulos */
+    --color-text-bio: #5e4c47;          /* Moca intermedio para párrafos y descripciones */
+    --color-accent: #d97787;            /* Rosa pastel elegante (10% acento) */
+    --color-accent-hover: #c46272;      /* Rosa más vivo en hover */
+    --color-accent-light: #fdedf0;      /* Fondo tenue para badges y panel de contacto */
+    --color-separator: #ebd4da;         /* Línea separadora rosa pastel */
+    --color-border: #f0e6e4;            /* Bordes suaves */
+    --color-btn-border: #e8d0d5;        /* Borde sutil rosa beige */
+    --color-btn-hover-bg: #fff6f7;      /* Hover botón */
+    --color-btn-hover-border: #d97787;  /* Borde hover botón */
     
     /* Tipografía */
     --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     
     /* Sombras y transiciones */
-    --card-shadow: 0 16px 40px rgba(15, 23, 42, 0.05), 0 2px 6px rgba(15, 23, 42, 0.02);
-    --btn-shadow-hover: 0 4px 14px rgba(79, 70, 229, 0.12);
+    --card-shadow: 0 16px 40px rgba(65, 45, 40, 0.06), 0 2px 8px rgba(65, 45, 40, 0.03);
+    --btn-shadow-hover: 0 6px 18px rgba(217, 119, 135, 0.25);
     --transition-standard: all 0.22s ease;
 }
 
@@ -39,7 +46,7 @@ body {
     background-color: var(--color-bg);
     color: var(--color-text-primary);
     
-    /* Centrado con Flexbox */
+    /* Centrado con Flexbox según guia_html_css.md */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,7 +57,7 @@ body {
 }
 
 /* ==========================================================================
-   2. CONTENEDOR DE LA TARJETA (CARD)
+   2. CONTENEDORES DE TARJETAS (CARDS)
    ========================================================================== */
 .card {
     background-color: var(--color-card-bg);
@@ -63,8 +70,15 @@ body {
     position: relative;
 }
 
+/* Contenedor amplio para las páginas de Proyectos y Contacto */
+.card-wide {
+    max-width: 780px;
+    text-align: left;
+    padding: 38px 48px 48px 48px;
+}
+
 /* ==========================================================================
-   3. MENÚ DE NAVEGACIÓN SUPERIOR
+   3. MENÚ DE NAVEGACIÓN SUPERIOR (COMÚN EN LAS 3 PÁGINAS)
    ========================================================================== */
 .nav {
     display: flex;
@@ -82,7 +96,7 @@ body {
 .nav-link {
     text-decoration: none;
     color: var(--color-text-primary);
-    font-size: 0.86rem;
+    font-size: 0.88rem;
     font-weight: 600;
     padding-bottom: 5px;
     position: relative;
@@ -93,9 +107,9 @@ body {
     color: var(--color-accent);
 }
 
-/* Indicador activo bajo "Inicio" */
+/* Indicador de pestaña activa */
 .nav-link.active {
-    color: var(--color-text-primary);
+    color: var(--color-accent);
 }
 
 .nav-link.active::after {
@@ -111,7 +125,264 @@ body {
 }
 
 /* ==========================================================================
-   4. AVATAR CIRCULAR
+   4. ENCABEZADOS DE SECCIÓN (PROYECTOS Y CONTACTO)
+   ========================================================================== */
+.page-header {
+    margin-bottom: 28px;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    letter-spacing: -0.015em;
+    margin-bottom: 6px;
+}
+
+.header-accent {
+    width: 38px;
+    height: 3px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+    margin-bottom: 12px;
+}
+
+.page-subtitle {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   5. SECCIÓN DE PROYECTOS (proyectos.html)
+   ========================================================================== */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Cada tarjeta individual de proyecto */
+.project-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-separator);
+    transition: var(--transition-standard);
+}
+
+.project-card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.project-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.project-tag {
+    display: inline-block;
+    background-color: var(--color-accent-light);
+    color: var(--color-accent);
+    font-size: 0.74rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.project-title {
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 8px;
+    line-height: 1.35;
+}
+
+.project-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--color-text-bio);
+    margin-bottom: 14px;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-accent);
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition-standard);
+}
+
+.project-link:hover {
+    color: var(--color-accent-hover);
+    transform: translateX(4px);
+}
+
+.project-img-wrapper {
+    width: 250px;
+    height: 155px;
+    border-radius: 14px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: #f7ede8;
+    box-shadow: 0 4px 12px rgba(65, 45, 40, 0.05);
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   6. SECCIÓN DE CONTACTO (contacto.html)
+   ========================================================================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr;
+    gap: 32px;
+    align-items: start;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--color-btn-border);
+    border-radius: 10px;
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    color: var(--color-text-primary);
+    background-color: #fffdfc;
+    transition: var(--transition-standard);
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(217, 119, 135, 0.2);
+    background-color: #ffffff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: var(--color-accent);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-family: var(--font-main);
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-standard);
+    margin-top: 4px;
+}
+
+.btn-submit:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--btn-shadow-hover);
+}
+
+/* Panel lateral con información de contacto directo */
+.contact-side-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.direct-contact-card {
+    background-color: var(--color-accent-light);
+    border: 1px solid var(--color-separator);
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.direct-contact-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 12px;
+}
+
+.direct-contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.direct-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-text-bio);
+    text-decoration: none;
+    font-size: 0.86rem;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    transition: var(--transition-standard);
+}
+
+.direct-contact-item:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    transform: translateX(3px);
+}
+
+.contact-icon {
+    color: var(--color-accent);
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   7. ESTILOS DE LA TARJETA DE PRESENTACIÓN (index.html)
    ========================================================================== */
 .avatar-container {
     width: 148px;
@@ -122,6 +393,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 3px solid var(--color-separator);
 }
 
 .avatar {
@@ -132,15 +404,12 @@ body {
     border-radius: 50%;
 }
 
-/* ==========================================================================
-   5. JERARQUÍA DE TEXTOS Y CABECERA
-   ========================================================================== */
 .profile-header {
     margin-bottom: 18px;
 }
 
 .profile-name {
-    font-size: 1.82rem;
+    font-size: 1.85rem;
     font-weight: 700;
     color: var(--color-text-primary);
     letter-spacing: -0.015em;
@@ -153,23 +422,21 @@ body {
     color: var(--color-text-secondary);
 }
 
-/* Línea separadora */
 .separator {
     border: none;
     width: 38px;
     height: 3px;
-    background-color: var(--color-separator);
+    background-color: var(--color-accent);
     border-radius: 2px;
     margin: 0 auto 22px auto;
 }
 
-/* Sección de biografía */
 .bio-section {
     margin-bottom: 28px;
 }
 
 .bio-text {
-    font-size: 0.87rem;
+    font-size: 0.88rem;
     line-height: 1.6;
     color: var(--color-text-bio);
     font-weight: 400;
@@ -177,9 +444,6 @@ body {
     margin: 0 auto;
 }
 
-/* ==========================================================================
-   6. BOTONES DE ENLACES SOCIALES
-   ========================================================================== */
 .social-links {
     display: flex;
     flex-direction: column;
@@ -191,7 +455,7 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 200px;
+    width: 220px;
     height: 42px;
     border: 1.5px solid var(--color-btn-border);
     border-radius: 10px;
@@ -213,7 +477,6 @@ body {
     justify-content: center;
 }
 
-/* Estados interactivos (hover, active, focus) */
 .btn-social:hover {
     border-color: var(--color-btn-hover-border);
     background-color: var(--color-btn-hover-bg);
@@ -232,16 +495,20 @@ body {
 }
 
 /* ==========================================================================
-   7. RESPONSIVIDAD (DISPOSITIVOS MÓVILES)
+   8. RESPONSIVIDAD (DISPOSITIVOS MÓVILES Y TABLETS)
    ========================================================================== */
-@media (max-width: 540px) {
+@media (max-width: 720px) {
     body {
         padding: 16px;
     }
 
     .card {
-        padding: 28px 20px 40px 20px;
+        padding: 28px 20px 36px 20px;
         border-radius: 16px;
+    }
+
+    .card-wide {
+        padding: 28px 20px 36px 20px;
     }
 
     .nav {
@@ -252,27 +519,30 @@ body {
         gap: 16px;
     }
 
-    .avatar-container {
-        width: 124px;
-        height: 124px;
-        margin-bottom: 18px;
+    /* Proyectos en móvil: imagen arriba y descripción abajo */
+    .project-card {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .project-img-wrapper {
+        width: 100%;
+        height: 190px;
+    }
+
+    /* Contacto en móvil: formulario y datos apilados */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 
     .profile-name {
         font-size: 1.55rem;
     }
 
-    .profile-subtitle {
-        font-size: 0.88rem;
-    }
-
-    .bio-text {
-        font-size: 0.82rem;
-        line-height: 1.55;
-    }
-
     .btn-social {
         width: 100%;
-        max-width: 220px;
+        max-width: 240px;
     }
 }
